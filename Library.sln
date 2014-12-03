@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibraryCPP", "LibraryCPP\LibraryCPP.vcxproj", "{5F48B3C9-0F72-4AFE-8512-C0E33A8F001A}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "LibraryPy", "LibraryPy\LibraryPy.pyproj", "{324EF951-3F3F-4C59-8CE3-92660D9281C7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|Win32 = Debug|Win32
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F48B3C9-0F72-4AFE-8512-C0E33A8F001A}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{5F48B3C9-0F72-4AFE-8512-C0E33A8F001A}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{5F48B3C9-0F72-4AFE-8512-C0E33A8F001A}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{5F48B3C9-0F72-4AFE-8512-C0E33A8F001A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5F48B3C9-0F72-4AFE-8512-C0E33A8F001A}.Debug|Win32.Build.0 = Debug|Win32
+		{5F48B3C9-0F72-4AFE-8512-C0E33A8F001A}.Release|Any CPU.ActiveCfg = Release|Win32
+		{5F48B3C9-0F72-4AFE-8512-C0E33A8F001A}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{5F48B3C9-0F72-4AFE-8512-C0E33A8F001A}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{5F48B3C9-0F72-4AFE-8512-C0E33A8F001A}.Release|Win32.ActiveCfg = Release|Win32
+		{5F48B3C9-0F72-4AFE-8512-C0E33A8F001A}.Release|Win32.Build.0 = Release|Win32
+		{324EF951-3F3F-4C59-8CE3-92660D9281C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{324EF951-3F3F-4C59-8CE3-92660D9281C7}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{324EF951-3F3F-4C59-8CE3-92660D9281C7}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{324EF951-3F3F-4C59-8CE3-92660D9281C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{324EF951-3F3F-4C59-8CE3-92660D9281C7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{324EF951-3F3F-4C59-8CE3-92660D9281C7}.Release|Win32.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
