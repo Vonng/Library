@@ -10,20 +10,45 @@ class DFADeadException(Exception):
 
 '''A DFA takes five arguments: StateSet Alphabet TransformFunc InitialState FinalState'''
 class DFA(object):
-    def __init__(self,Q,S,T,q0,F):
-        self.Q = Q          #Init State Q: A Set of possible state
-        self.S = S          #Init Alphabet Sigma S: A Set of Character
-        self.T = T          #Init TransFunction T: A callable object
-        self.q0 = q0        #Init InitState q0: q0 in Q should be true
-        self.F = F          #Init Final States: F should be contained in Q
-        self.q = q0         #Init DFA Current State q with q0.
+    def __init__(self,states,alphabet,transfer,initState,finalState,name="Default"):
+        self.Q = set(states.keys())          #Init State Q: A Set of possible state
+        self.S = set(alphabet.keys())         #Init Alphabet Sigma S: A Set of Character
+        self.T = {}
+        for state in self.Q:
+            self.T[state] = {}
+            for char in self.S:
+                exist = bool(transfer.get(state) and transfer.get(state).get(char))
+                self.T[state][char] = transfer[state][char]  if exist else None
+
+        self.q0 = initState        #Init InitState q0: q0 in Q should be true
+        self.F = finalState          #Init Final States: F should be contained in Q
+        self.q = initState         #Init DFA Current State q with q0.
+        self.name = name
+
+        if not self.q0 in self.Q:
+            raise ValueError("DFA:%s\tInit State q0 is not in Available State Set Q" % self.name)
+
+        if not self.F.issubset(self.Q):
+            raise ValueError("DFA:%s\tFinal State Set F is not a subset of State Set Q")
 
 
-        if not q0 in Q:
-            raise ValueError("Init State q0 is not in Available State Set Q")
+    '''It returns new state. And return None if it shows explicitly in DFA's Transfer Table'''
+    def runStep(self,state,char):
+        if not self.T.get(state):
+            raise KeyError("DFA:%s\t No Such State in DFA")
+        if not char in self.S:
+            return state    #If this charactor is not in Alphabet, It means no change to the DFA
+        return self.T[state][char]
 
-        if not F.issubset(Q):
-            raise ValueError("Final State Set F is not a subset of State Set Q")
+
+    '''It returns the final state DFA reaches. None if DFA is dead'''
+    def runString(self,state,string):
+        tempState = state
+        for e in string:
+            tempState = self.runStep(tempState,e)
+            if not tempState:
+                return None #Prevent Situation: None ---> ?
+        return tempState
 
 
     '''Judge Whether a string belongs to this DFA's Language'''
@@ -35,40 +60,92 @@ class DFA(object):
             infoString = "%d:\t[%s] -- (%s) --> [%s]" % (cnt,oldState,e,newState)
             print infoString
             if not newState:
-                raise DFADeadException(cnt,oldState,cnt)
+                return None
+                #raise DFADeadException(cnt,oldState,cnt)
             self.q = newState
-        return True if self.q in self.F else False
-
+        result,self.q = self.q,self.q0 #restore status
+        return result
     
     '''Cartesian Product of two DFA'''
-    def mul(self,other):
-        newQ =  {(i,j) for i in self.Q for j in other.Q}    #Cartesian Product of State Set
-        newS = self.S.union(other.S)            #Union of factors
-        newd = { {} for i in newQ for j in newQ}
+    def __mul__(lhs,rhs):
+        newQ = {(i,j) for i in lhs.Q for j in rhs.Q}    #Cartesian Product of State Set
+        newS = lhs.S.union(rhs.S)            #Union of factors
+        newT = {begin:{ letter:None for letter in newS } for begin in newQ}
+        for begin in newQ:
+            for letter in newS:
+                p,q = begin #Unpack to two state
+                newp = lhs.runStep(p,letter)
+                newq = rhs.runStep(q,letter)
+                if newp and newq:
+                    newT[begin][letter] = (newp,newq)
                 
-        newq0 = (self.q0,other.q0);
-        newF = {(i,j) for i in self.F for j in other.F}    #Cartesian Product of Final State Set
+        newq0 = (lhs.q0,rhs.q0)
+        newF = {(i,j) for i in lhs.F for j in rhs.F}    #Cartesian Product of Final State Set
+        return DFA(newQ,newS,newT,newq0,newF,"(%s,%s)" % (lhs.name,rhs.name))
 
 
 
 if __name__ == "__main__":
 
-
-    state = {'A','B','C','D'}
-    sigma = {0,1,2}
-    transf = {
-      'A':{0:'C',1:'A',2:'D'},
-      'B':{0:'A',1:'B',2:None},
-      'C':{0:'B',1:'B',2:None},
-      'D':{0:'D',1:'D',2:None}
+    storeDFA = {
+        'name' : "store",
+        'states' : {
+                    'a':"Begin",
+                    'b':"Paid",
+                    'c':"Paid|Delivered",
+                    'd':"Paid|Redeemed",
+                    'e':"Paid|Deliverd|Redeemed",
+                    'f':"Paid|Redeemed|Transfered",
+                    'g':"Paid|Redeemed|Transfered|Deliverd|Final"
+                    },
+        'alphabet':{'P':'pay',
+                    'R':'redeem',
+                    'T':'transfer',
+                    'D':'deliver',
+                    },
+        'transfer':{
+            'a':{'P':'b'},
+            'b':{'R':'b','D':'c',},
+            'c':{'R':'e'},
+            'd':{'T':'f'},
+            'e':{'T':'g'},
+            'f':{'D':'g'},
+            'g':{}
+            },
+        'initState':'a',
+        'finalState':{'g'}
         }
-    q0 = 'B'
-    F = {'D'}
 
-    dfa = DFA(state,sigma,transf,q0,F)
-    try:
-        dfa([0,1,0,2])
-    except DFADeadException,e:
-        print "DFA is Dead at Step:%d State:[%s],Input[%s]" % (e.cnt,e.q,e.input)
-        
-    
+    bankDFA = {
+        'name' : "store",
+        'states' : {
+                    '1':"Begin",
+                    '2':"Canceled",
+                    '3':"Redeem",
+                    '4':"Redeem|Transfered",
+                    },
+        'alphabet':{'R':'redeem',
+                    'C':'Cancel',
+                    'T':'transfer',
+                    },
+        'transfer':{
+            '1':{'C':'2','R':'3'},
+            '2':{},
+            '3':{'T':'4'},
+            '4':{},
+            },
+        'initState':'1',
+        'finalState':{'2','4'}
+        }
+
+    store = DFA(**storeDFA)
+    bank = DFA(**bankDFA)
+
+    #store('PDRTP')
+    bank('C')
+    print "="*80
+    bank('RT')    
+    print "="*80
+    store_bank = store * bank
+
+    store_bank('P')
