@@ -78,17 +78,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Basic.cpp" />
+    <ClCompile Include="Console.cpp" />
+    <ClCompile Include="Exception.cpp" />
     <ClCompile Include="Geo2D.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Matlab.cpp" />
     <ClCompile Include="DFA.cpp" />
+    <ClCompile Include="String.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Basic.h" />
+    <ClInclude Include="Console.h" />
+    <ClInclude Include="Exception.h" />
+    <ClInclude Include="Function.h" />
     <ClInclude Include="Geo2D.h" />
     <ClInclude Include="Matlab.h" />
     <ClInclude Include="Pointer.h" />
     <ClInclude Include="DFA.h" />
+    <ClInclude Include="String.h" />
+    <ClInclude Include="Tuple.h" />
     <ClInclude Include="UnitTest.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

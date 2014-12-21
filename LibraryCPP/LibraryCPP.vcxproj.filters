@@ -1,51 +1,97 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Basic">
+      <UniqueIdentifier>{dbf601c5-29de-468f-a3af-6363c6e46d76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Basic\Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Basic\Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{edfe5fed-5603-4682-8d51-db03d94eb08f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Collection">
+      <UniqueIdentifier>{1930376c-bf38-4c46-b7fc-0f2c5d85f4d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math\Header Files">
+      <UniqueIdentifier>{88333c16-4289-4379-971f-1e09f9561179}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math\Source Files">
+      <UniqueIdentifier>{4772c7e7-5002-49e1-ba91-1877492a0fa7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Collection\Header Files">
+      <UniqueIdentifier>{4aebb2bd-dadf-47bc-9e75-ac569a77ce36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Collection\Source Files">
+      <UniqueIdentifier>{0f5820e6-f509-402d-8901-cfa82d585ed5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Basic.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Geo2D.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Matlab.h">
-      <Filter>Header Files</Filter>
+      <Filter>Basic\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Pointer.h">
-      <Filter>Header Files</Filter>
+      <Filter>Basic\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="UnitTest.h">
-      <Filter>Header Files</Filter>
+      <Filter>Basic\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="String.h">
+      <Filter>Basic\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DFA.h">
-      <Filter>Header Files</Filter>
+      <Filter>Math\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Geo2D.h">
+      <Filter>Math\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Matlab.h">
+      <Filter>Math\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Console.h">
+      <Filter>Basic\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Exception.h">
+      <Filter>Basic\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tuple.h">
+      <Filter>Basic\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Function.h">
+      <Filter>Basic\Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Geo2D.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Matlab.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Basic.cpp">
+      <Filter>Basic\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DFA.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Math\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Geo2D.cpp">
+      <Filter>Math\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Matlab.cpp">
+      <Filter>Math\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Console.cpp">
+      <Filter>Basic\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="String.cpp">
+      <Filter>Basic\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exception.cpp">
+      <Filter>Basic\Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
