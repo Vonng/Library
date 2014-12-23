@@ -85,7 +85,7 @@ namespace Vonng
 	typedef wchar_t					wchar;
 	typedef const wchar_t*			wcstr;
 
-
+	typedef signed __int64			pos_t;
 
 	typedef __int64					vsize;
 

@@ -142,19 +142,23 @@ namespace TestCase
 		//Pointer Invoker
 		Func<void(int)> obj2(p);
 
-		Ptr<Point> ppp(p);
+		Ptr<Point> ppp(new Point(.3,.5));
+		Func<void(int)> zzzz(ppp);
+		zzzz(3);
+
+		
 
 	}
 
 
 	void TestBasic()
 	{
-		//TestPointer();
-		//TestString();
-		//TestChineseVariableName();
-		//TestConsole();
-		//TestException();
-		//TestTruple();
+		TestPointer();
+		TestString();
+		TestChineseVariableName();
+		TestConsole();
+		TestException();
+		TestTruple();
 		TestFunc();
 	}
 

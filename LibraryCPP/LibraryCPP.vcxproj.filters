@@ -34,6 +34,15 @@
     <Filter Include="Collection\Source Files">
       <UniqueIdentifier>{0f5820e6-f509-402d-8901-cfa82d585ed5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Stream">
+      <UniqueIdentifier>{6feefab6-c949-4203-b513-49032b7fd516}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stream\Header Files">
+      <UniqueIdentifier>{e523f558-4547-4a2a-85bb-20868c68fcab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stream\Source Files">
+      <UniqueIdentifier>{1dc3ec24-3e91-43a9-9ce5-557971bbfafe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Basic.h">
@@ -48,15 +57,6 @@
     <ClInclude Include="String.h">
       <Filter>Basic\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DFA.h">
-      <Filter>Math\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Geo2D.h">
-      <Filter>Math\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Matlab.h">
-      <Filter>Math\Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Console.h">
       <Filter>Basic\Header Files</Filter>
     </ClInclude>
@@ -69,21 +69,21 @@
     <ClInclude Include="Function.h">
       <Filter>Basic\Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Math\DFA.h">
+      <Filter>Math\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Geo2D.h">
+      <Filter>Math\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Matlab.h">
+      <Filter>Math\Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Basic.cpp">
       <Filter>Basic\Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DFA.cpp">
-      <Filter>Math\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Geo2D.cpp">
-      <Filter>Math\Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Matlab.cpp">
-      <Filter>Math\Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Console.cpp">
       <Filter>Basic\Source Files</Filter>
     </ClCompile>
@@ -92,6 +92,18 @@
     </ClCompile>
     <ClCompile Include="Exception.cpp">
       <Filter>Basic\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\DFA.cpp">
+      <Filter>Math\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\Geo2D.cpp">
+      <Filter>Math\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\Matlab.cpp">
+      <Filter>Math\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Stream\Interfaces.cpp">
+      <Filter>Stream\Header Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

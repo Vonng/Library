@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{5F48B3C9-0F72-4AFE-8512-C0E33A8F001A}</ProjectGuid>
+    <ProjectGuid>{036EE003-2F15-4887-AD3A-FE4411B783BB}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>LibraryCPP</RootNamespace>
+    <RootNamespace>Test</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -78,28 +78,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Basic.cpp" />
-    <ClCompile Include="Console.cpp" />
-    <ClCompile Include="Exception.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Math\DFA.cpp" />
-    <ClCompile Include="Math\Geo2D.cpp" />
-    <ClCompile Include="Math\Matlab.cpp" />
-    <ClCompile Include="Stream\Interfaces.cpp" />
-    <ClCompile Include="String.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Basic.h" />
-    <ClInclude Include="Console.h" />
-    <ClInclude Include="Exception.h" />
-    <ClInclude Include="Function.h" />
-    <ClInclude Include="Math\DFA.h" />
-    <ClInclude Include="Math\Geo2D.h" />
-    <ClInclude Include="Math\Matlab.h" />
-    <ClInclude Include="Pointer.h" />
-    <ClInclude Include="String.h" />
-    <ClInclude Include="Tuple.h" />
-    <ClInclude Include="UnitTest.h" />
+    <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
