@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="Basic">
       <UniqueIdentifier>{dbf601c5-29de-468f-a3af-6363c6e46d76}</UniqueIdentifier>
     </Filter>
@@ -43,6 +39,12 @@
     <Filter Include="Stream\Source Files">
       <UniqueIdentifier>{1dc3ec24-3e91-43a9-9ce5-557971bbfafe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Algorithm">
+      <UniqueIdentifier>{d1150eae-0196-4701-9815-ef76d4f83ce3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data">
+      <UniqueIdentifier>{2122d842-95ae-4a63-964b-310b8cd2d4af}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Basic.h">
@@ -78,6 +80,15 @@
     <ClInclude Include="Math\Matlab.h">
       <Filter>Math\Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Data\RBTree.h">
+      <Filter>Data</Filter>
+    </ClInclude>
+    <ClInclude Include="CStr.h">
+      <Filter>Basic\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdString.h">
+      <Filter>Basic\Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Basic.cpp">
@@ -105,5 +116,6 @@
     <ClCompile Include="Stream\Interfaces.cpp">
       <Filter>Stream\Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="TestBasic.cpp" />
   </ItemGroup>
 </Project>
